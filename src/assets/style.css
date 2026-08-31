@@ -156,6 +156,12 @@ main {
   letter-spacing: 0.01em;
 }
 
+.tag-market { background: #eaf0fd; color: #3f6fd8; }
+.tag-region { background: #e8f7f0; color: #1f9d6f; }
+.tag-price  { background: #fdf1e2; color: #c07a12; }
+.tag-news   { background: #fdeaec; color: #d1495b; }
+.tag-default { background: var(--pill-bg); color: var(--pill-fg); }
+
 .post-card-meta,
 .post-meta-top {
   display: flex;

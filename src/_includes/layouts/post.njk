@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 <article class="post">
   {% if tag %}
-  <span class="tag-pill">{{ tag }}</span>
+  <span class="tag-pill {{ tag | tagClass }}">{{ tag }}</span>
   {% endif %}
   <h1>{{ title }}</h1>
   <div class="post-card-meta post-meta-top">
