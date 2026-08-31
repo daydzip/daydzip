@@ -5,7 +5,8 @@ pagination:
   alias: category
 permalink: "/category/{{ category }}/"
 layout: layouts/base.njk
-title: "{{ category }}"
+eleventyComputed:
+  title: "{{ category }}"
 ---
 <section class="post-feed">
   <h1 class="feed-heading">{{ category }}</h1>
