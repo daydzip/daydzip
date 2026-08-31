@@ -24,7 +24,10 @@ module.exports = function (eleventyConfig) {
     return tagClassMap[tag] || "tag-default";
   });
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/*.md").reverse();
+    return collectionApi
+      .getFilteredByGlob("src/posts/*.md")
+      .filter((post) => !post.data.draft)
+      .reverse();
   });
 
   return {

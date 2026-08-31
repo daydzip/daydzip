@@ -20,5 +20,6 @@ collections:
         default: "시장 동향"
         options: ["시장 동향", "지역 분석", "시세트래킹", "부동산 뉴스", "일상"]
       - { label: "요약", name: "excerpt", widget: "text", required: false, hint: "글 목록에 보여줄 짧은 요약" }
+      - { label: "비공개(초안)", name: "draft", widget: "boolean", default: false, hint: "체크하면 사이트에 게시되지 않고 관리자만 편집 가능한 초안 상태가 됩니다" }
       - { label: "본문", name: "body", widget: "markdown" }
       - { label: "레이아웃", name: "layout", widget: "hidden", default: "layouts/post.njk" }
