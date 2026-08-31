@@ -1,0 +1,22 @@
+---
+pagination:
+  data: categories
+  size: 1
+  alias: category
+permalink: "/category/{{ category }}/"
+layout: layouts/base.njk
+title: "{{ category }}"
+---
+<section class="post-feed">
+  <h1 class="feed-heading">{{ category }}</h1>
+  {% set found = false %}
+  {% for post in collections.posts %}
+    {% if post.data.tag == category %}
+      {% set found = true %}
+      {% include "partials/post-card.njk" %}
+    {% endif %}
+  {% endfor %}
+  {% if not found %}
+  <p class="empty-state">아직 이 카테고리에 글이 없습니다.</p>
+  {% endif %}
+</section>

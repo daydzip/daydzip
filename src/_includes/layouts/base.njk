@@ -8,12 +8,32 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="site-title" href="/">{{ site.title }}</a>
+    <div class="site-header-left">
+      <button type="button" class="menu-btn" id="menu-btn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="site-title" href="/">{{ site.title }}</a>
+    </div>
     <nav>
       <a href="/">홈</a>
       <a href="/posts/">글 목록</a>
     </nav>
   </header>
+
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">카테고리</span>
+      <button type="button" class="drawer-close" id="drawer-close" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="/">전체 글</a>
+      {% for category in categories %}
+      <a href="/category/{{ category }}/">{{ category }}</a>
+      {% endfor %}
+    </nav>
+  </aside>
+
   <main>
     {{ content | safe }}
   </main>
@@ -31,6 +51,29 @@
         }
       });
     }
+  </script>
+  <script>
+    (function () {
+      const menuBtn = document.getElementById("menu-btn");
+      const drawer = document.getElementById("drawer");
+      const overlay = document.getElementById("drawer-overlay");
+      const closeBtn = document.getElementById("drawer-close");
+
+      function openDrawer() {
+        drawer.classList.add("open");
+        overlay.classList.add("open");
+        menuBtn.setAttribute("aria-expanded", "true");
+      }
+      function closeDrawer() {
+        drawer.classList.remove("open");
+        overlay.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      }
+
+      menuBtn.addEventListener("click", openDrawer);
+      overlay.addEventListener("click", closeDrawer);
+      closeBtn.addEventListener("click", closeDrawer);
+    })();
   </script>
 </body>
 </html>
