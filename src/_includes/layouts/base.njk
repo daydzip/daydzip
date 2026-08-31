@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · daydzip</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="/">daydzip</a>
+    <nav>
+      <a href="/">홈</a>
+      <a href="/posts/">글 목록</a>
+    </nav>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <p>&copy; {{ site.year }} daydzip</p>
+  </footer>
+</body>
+</html>
