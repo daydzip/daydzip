@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
     "지역 분석": "tag-region",
     "시세트래킹": "tag-price",
     "부동산 뉴스": "tag-news",
+    "일상": "tag-life",
   };
   eleventyConfig.addFilter("tagClass", function (tag) {
     return tagClassMap[tag] || "tag-default";

@@ -160,6 +160,7 @@ main {
 .tag-region { background: #e8f7f0; color: #1f9d6f; }
 .tag-price  { background: #fdf1e2; color: #c07a12; }
 .tag-news   { background: #fdeaec; color: #d1495b; }
+.tag-life   { background: #f3eefd; color: #7c4fd1; }
 .tag-default { background: var(--pill-bg); color: var(--pill-fg); }
 
 .post-card-meta,
