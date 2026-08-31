@@ -3,8 +3,17 @@ layout: layouts/base.njk
 title: 홈
 ---
 <section class="hero">
-  <h1>{{ site.title }}</h1>
-  <p>{{ site.tagline }}</p>
+  <div class="hero-bg">
+    <div class="hero-slide active" style="background-image:url('/assets/hero/1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('/assets/hero/2.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('/assets/hero/3.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('/assets/hero/4.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.tagline }}</p>
+  </div>
 </section>
 
 <section class="post-feed">
@@ -13,3 +22,16 @@ title: 홈
   {% include "partials/post-card.njk" %}
   {% endfor %}
 </section>
+
+<script>
+  (function () {
+    const slides = document.querySelectorAll(".hero-slide");
+    if (!slides.length) return;
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 5000);
+  })();
+</script>
