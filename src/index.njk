@@ -3,18 +3,13 @@ layout: layouts/base.njk
 title: 홈
 ---
 <section class="hero">
-  <h1>daydzip</h1>
-  <p>기록을 남기는 공간입니다.</p>
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.tagline }}</p>
 </section>
 
-<section class="recent-posts">
-  <h2>최근 글</h2>
-  <ul class="post-list">
-    {% for post in collections.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <span class="post-date">{{ post.data.date | dateReadable }}</span>
-    </li>
-    {% endfor %}
-  </ul>
+<section class="post-feed">
+  <h2 class="feed-heading">Featured Posts</h2>
+  {% for post in collections.posts %}
+  {% include "partials/post-card.njk" %}
+  {% endfor %}
 </section>

@@ -3,6 +3,15 @@ layout: layouts/base.njk
 ---
 <article class="post">
   <h1>{{ title }}</h1>
-  <p class="post-date">{{ date | dateReadable }}</p>
-  {{ content | safe }}
+  {% if tag %}
+  <span class="tag-pill">{{ tag }}</span>
+  {% endif %}
+  <div class="post-card-meta post-meta-top">
+    <span class="avatar">{{ site.author | initial }}</span>
+    <span class="author-name">{{ site.author }}</span>
+    <span class="meta-date">{{ date | dateShort }}</span>
+  </div>
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
 </article>

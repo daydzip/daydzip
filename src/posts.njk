@@ -3,12 +3,9 @@ layout: layouts/base.njk
 title: 글 목록
 permalink: /posts/
 ---
-<h1>글 목록</h1>
-<ul class="post-list">
+<section class="post-feed">
+  <h1 class="feed-heading">글 목록</h1>
   {% for post in collections.posts %}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-    <span class="post-date">{{ post.data.date | dateReadable }}</span>
-  </li>
+  {% include "partials/post-card.njk" %}
   {% endfor %}
-</ul>
+</section>
