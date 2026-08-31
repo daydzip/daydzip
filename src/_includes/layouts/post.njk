@@ -2,10 +2,10 @@
 layout: layouts/base.njk
 ---
 <article class="post">
-  <h1>{{ title }}</h1>
   {% if tag %}
   <span class="tag-pill">{{ tag }}</span>
   {% endif %}
+  <h1>{{ title }}</h1>
   <div class="post-card-meta post-meta-top">
     <span class="avatar">{{ site.author | initial }}</span>
     <span class="author-name">{{ site.author }}</span>

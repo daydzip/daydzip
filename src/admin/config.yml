@@ -14,7 +14,7 @@ collections:
     fields:
       - { label: "제목", name: "title", widget: "string" }
       - { label: "날짜", name: "date", widget: "datetime" }
-      - { label: "태그", name: "tag", widget: "string", default: "Blog", required: false }
+      - { label: "카테고리", name: "tag", widget: "string", default: "일상", required: false }
       - { label: "요약", name: "excerpt", widget: "text", required: false, hint: "글 목록에 보여줄 짧은 요약" }
       - { label: "본문", name: "body", widget: "markdown" }
       - { label: "레이아웃", name: "layout", widget: "hidden", default: "layouts/post.njk" }
